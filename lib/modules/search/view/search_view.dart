@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class SearchView extends StatelessWidget {
   SearchView({
@@ -79,11 +80,9 @@ class SearchView extends StatelessWidget {
                         MaterialStateProperty.all(Colors.blueGrey)),
                 onPressed: () {
                   if (_controller.text.isNotEmpty) {
-                    Navigator.pop(context, _controller.text);
+                    Get.back(result: _controller.text);
                   }
                   FocusManager.instance.primaryFocus?.unfocus();
-
-                  //log('${_controller.text}');
                 },
                 child: Text(
                   'Шаарды тап',
